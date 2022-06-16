@@ -148,13 +148,19 @@ void Series::calcularCalificacionSeries() {
 // Métodos de acceso(gets)
 Serie *Series::getPtrSerie(string _iD) {
     return new Serie();
+    for (int iS = 0; iS < cantidad; iS++){
+        if(arrPtrSeries[iS]->getId()==_iD){
+            return arrPtrSeries[iS];
+        }
+    }
+    return nullptr;
     }
 
 
-int Series::getCantidadSeries() {
-     return 0;
+int Series::getCantidadSeries(){
+    return cantidad;
+}
 
-    }
 
 
 // métodos modificadores(SETS)
